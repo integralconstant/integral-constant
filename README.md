@@ -56,4 +56,4 @@ public class Main {
 [내부링크](#html의-h1부터-h6까지-푸시)
 
 ## 이미지 삽입
-![구글 로고](image.png "google logo")![alt text](image.png)
+![구글 로고](image.png "google logo")
