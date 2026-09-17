@@ -45,8 +45,6 @@ public class Main {
 }
 ```
 
-문장 중에 `ctrl+c` 키가 나오면...
-
 ## 링크
 
 [구글 바로가기](https://www.google.com "alt 옵션")
