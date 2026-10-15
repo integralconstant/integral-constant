@@ -1,5 +1,77 @@
 # 202430205 김진형
 
+[2주차](#0910-강의-내용-2주차) | [3주차](#0917-강의-내용-3주차) | [5주차](#1001-강의-내용-5주차) | [6주차](#1008-강의-내용-6주차) | [7주차](#1015-강의-내용-7주차)
+
+## 1015 강의 내용 (7주차)
+
+### - 원형 연결 리스트
+
+node1 -> node2 -> node3 -> node4 -> node5 -> node1 -> ...
+
+- example-01.py
+
+```python
+class Node():
+    def __init__(self):
+        self.data = None
+        self.link = None
+        
+node1 = Node()
+node1.data = "다현"
+node1.link = node1 #항상 마지막 노드가 첫번째 노드를 가리킨다(첫번째 노드가 마지막 노드인 경우도 있다. 따라서 첫 번째 노드에게도 자기 자신으로 링크를 주어야 한다.)
+
+node2 = Node()
+node2.data = "정연"
+node1.link = node2 #노드 1 -> 노드 2
+node2.link = node1 #노드 2 -> 노드 1
+
+node3 = Node()
+node3.data = "쯔위"
+node2.link = node3 # 노드 2 -> 노드 3
+node3.link = node1 # 노드 3 -> 노드 1
+
+node4 = Node()
+node4.data = "사나"
+node3.link = node4 # 노드 3 -> 노드 4
+node4.link = node1 # 노드 4 -> 노드 1
+
+node5 = Node()
+node5.data = "지효"
+node4.link = node5 # 노드 4 -> 노드 5
+node5.link = node1 # 노드 5 -> 노드 1
+
+current = node1
+print(current.data, end = "")
+while current.link != node1:
+    current = current.link
+    print(current.data, end = "")
+```
+
+### - 원형 연결 리스트의 중간 노드 삽입
+
+- example-02.py
+
+```python
+# example-01.py의 노드와 동일
+
+newNode = Node()
+newNode.data = "재남"
+newNode.link = node2.link
+node2.link = newNode
+
+current = node1
+print(current.data, end = "")
+while current.link != node1:
+    current = current.link
+    print(current.data, end = "")
+```
+### - 스택 구조
+
+선입후출, 후입선출 <br> ex) 프링글스 통
+
+[to top](#202430205-김진형)
+
+
 ## 1008 강의 내용 (6주차)
 
 ### - 단순 연결 리스트의 데이터 관리
@@ -51,6 +123,8 @@ while current.link != None: # current.link가 None이 아닌 동안 반복
     current = current.link  # current를 다음 노드로 이동
     print(current.data, end=" ")
 ```
+[to top](#202430205-김진형)
+
 
 ## 1001 강의 내용 (5주차)
 
@@ -111,6 +185,8 @@ print(node1.link.link.data, end=" ")           # node1.link*2=node3
 print(node1.link.link.link.data, end=" ")      # node1.link*3=node4
 print(node1.link.link.link.link.data, end=" ") # node1.link*4=node5
 ```
+[to top](#202430205-김진형)
+
 ---
 
  ## 0917 강의 내용 (3주차)
@@ -131,6 +207,8 @@ print(kakao)
 kakao[3] = "삽입"
 print(kakao)
 ```
+[to top](#202430205-김진형)
+
 ---
 
  ## 0910 강의 내용 (2주차)
@@ -188,3 +266,5 @@ public class Main {
 
 ## 이미지 삽입
 ![구글 로고](image.png "google logo")
+
+[to top](#202430205-김진형)
