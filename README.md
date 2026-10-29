@@ -1,6 +1,74 @@
 # 202430205 김진형
 
-[2주차](#0910-강의-내용-2주차) | [3주차](#0917-강의-내용-3주차) | [5주차](#1001-강의-내용-5주차) | [6주차](#1008-강의-내용-6주차) | [7주차](#1015-강의-내용-7주차)
+[2주차](#0910-강의-내용-2주차) | [3주차](#0917-강의-내용-3주차) | [5주차](#1001-강의-내용-5주차) | [6주차](#1008-강의-내용-6주차) | [7주차](#1015-강의-내용-7주차) | [8주차](#1029-강의-내용-8주차)
+
+## 1029 강의 내용 (8주차)
+
+### - Stack
+
+선입후출, 후입선출 <br>
+수직적인 구조, 출입구가 하나 <br>
+ex) 프링글스 통, 종이컵의 스택
+
+-push: 데이터 삽입<br>
+-pop: 데이터 추출<br>
+-top: 스택 최상단 데이터
+```python
+def init_stack(size):
+    global stack, top
+    stack = [None] * size
+    top = -1
+    return print("스택이 초기화되었습니다. 스택 크기는 " + str(size) + "입니다.")
+    
+def is_full():
+    global top
+    if top == len(stack) -1:
+        return print("스택이 가득 찼습니다.")
+    else:
+        return print("스택이 가득 차지 않았습니다.")
+    
+def is_empty():
+    global top
+    if top == -1:
+        return True
+    else:
+        return False
+    
+def push(data):
+    global top
+    top += 1
+    stack[top] = data
+    
+def pop():
+    global top
+    data = stack[top]
+    stack[top] = None
+    if (is_empty()):
+        top -= 1
+        return print("스택이 비어있습니다.")
+    else:
+        top -= 1
+        return print("pop된 데이터:" + str(data))
+
+def peek():
+    global top
+    data = stack[top]
+    return print("peek된 데이터: " + str(data))
+    
+def print_stack():
+    print("-----스택 상태-----")
+    for i in range(len(stack)-1, -1, -1):
+        print(stack[i])
+    print("-----------------------------")
+```
+
+### - Queue
+
+선입선출, 후입후출 <br>
+수평적 구조, 앞뒤로 구분된 출입구가 존재 <br>
+ex) 대기열
+
+[to top](#202430205-김진형)
 
 ## 1015 강의 내용 (7주차)
 
@@ -65,9 +133,6 @@ while current.link != node1:
     current = current.link
     print(current.data, end = "")
 ```
-### - 스택 구조
-
-선입후출, 후입선출 <br> ex) 프링글스 통
 
 [to top](#202430205-김진형)
 
