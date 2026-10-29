@@ -52,7 +52,7 @@ while current.link != node1:
 - example-02.py
 
 ```python
-# example-01.py의 노드와 동일
+# 노드 구조는 example-01.py와 동일
 
 newNode = Node()
 newNode.data = "재남"
